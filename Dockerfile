@@ -32,6 +32,7 @@ RUN sudo chown -R coder:coder /home/coder/.local
 
 
 USER root
+RUN chmod a+w ./ -R
 
 # Install OpenJDK-8
 # RUN sudo apt-get update && \
