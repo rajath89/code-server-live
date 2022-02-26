@@ -46,13 +46,13 @@ RUN chmod a+w ./ -R
 #     apt-get clean && \
 #     update-ca-certificates -f;
 
-RUN sudo apt update
+RUN sudo apt-get update
 
-RUN sudo apt install software-properties-common
+RUN sudo apt-get install software-properties-common
 
 RUN sudo apt-add-repository 'deb http://security.debian.org/debian-security stretch/updates main'
 
-RUN sudo apt install openjdk-8-jdk
+RUN sudo apt-get install openjdk-8-jdk
 
 
 
