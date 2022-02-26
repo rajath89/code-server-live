@@ -27,6 +27,10 @@ RUN sudo chown -R coder:coder /home/coder/.local
 # Note: we use a different marketplace than VS Code. See https://github.com/cdr/code-server/blob/main/docs/FAQ.md#differences-compared-to-vs-code
 #RUN code-server --install-extension dendron.dendron
 
+RUN sudo apt-get install wget
+RUN wget https://open-vsx.org/api/dendron/dendron/0.83.0/file/dendron.dendron-0.83.0.vsix 
+RUN code-server --install-extension dendron.dendron-0.83.0.vsix 
+
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
 
