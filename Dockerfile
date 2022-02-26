@@ -36,7 +36,7 @@ RUN chmod a+w ./ -R
 
 RUN sudo dpkg --purge --force-depends ca-certificates-java 
 
-RUN sudo apt-get install ca-certificates-java
+RUN sudo apt-get install ca-certificates-java -y
 
 RUN sudo apt install openjdk-11-jdk -y
 
