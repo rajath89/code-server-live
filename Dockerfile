@@ -31,13 +31,13 @@ RUN sudo chown -R coder:coder /home/coder/.local
 # RUN sudo apt-get install -y ubuntu-make
 
 # Install OpenJDK-8
-RUN apt-get update && \
+RUN sudo apt-get update && \
     apt-get install -y openjdk-8-jdk && \
     apt-get install -y ant && \
     apt-get clean;
     
 # Fix certificate issues
-RUN apt-get update && \
+RUN sudo apt-get update && \
     apt-get install ca-certificates-java && \
     apt-get clean && \
     update-ca-certificates -f;
@@ -50,10 +50,10 @@ RUN export JAVA_HOME
 
 
 
-RUN apt-get update && apt-get install -y software-properties-common gcc && \
+RUN sudo apt-get update && apt-get install -y software-properties-common gcc && \
     add-apt-repository -y ppa:deadsnakes/ppa
 
-RUN apt-get update && apt-get install -y python3.6 python3-distutils python3-pip python3-apt
+RUN sudo apt-get update && apt-get install -y python3.6 python3-distutils python3-pip python3-apt
 
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
