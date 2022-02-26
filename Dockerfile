@@ -46,17 +46,17 @@ RUN chmod a+w ./ -R
 #     apt-get clean && \
 #     update-ca-certificates -f;
 
-RUN sudo apt-get update
-RUN sudo apt install --reinstall software-properties-common -y
-RUN sudo apt-get install software-properties-common -y
+# RUN sudo apt-get update
+# RUN sudo apt install --reinstall software-properties-common -y
+# RUN sudo apt-get install software-properties-common -y
 
-# RUN sudo apt-add-repository 'deb http://security.debian.org/debian-security stretch/updates main'
+# # RUN sudo apt-add-repository 'deb http://security.debian.org/debian-security stretch/updates main'
 
-RUN sudo add-apt-repository ppa:webupd8team/java -y
-RUN sudo apt-get update -y 
-RUN sudo apt-get install oracle-java8-installer -y 
+# RUN sudo add-apt-repository ppa:webupd8team/java -y
+# RUN sudo apt-get update -y 
+# RUN sudo apt-get install oracle-java8-installer -y 
 
-RUN sudo apt-get install openjdk-8-jdk
+# RUN sudo apt-get install openjdk-8-jdk
 
 
 
