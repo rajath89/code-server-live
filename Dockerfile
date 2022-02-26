@@ -66,10 +66,10 @@ RUN chmod a+w ./ -R
 
 
 
-RUN sudo apt-get update && apt-get install -y software-properties-common gcc && \
-    add-apt-repository -y ppa:deadsnakes/ppa
+# RUN sudo apt-get update && apt-get install -y software-properties-common gcc && \
+#     add-apt-repository -y ppa:deadsnakes/ppa
 
-RUN sudo apt-get update && apt-get install -y python3.6 python3-distutils python3-pip python3-apt
+RUN sudo apt-get update && apt-get install -y python3.6 python3-pip 
 
 USER coder
 
