@@ -31,8 +31,8 @@ RUN sudo chown -R coder:coder /home/coder/.local
 # RUN sudo apt-get install -y ubuntu-make
 
 
-USER root
-RUN chmod a+w ./ -R
+# USER root
+# RUN chmod a+w ./ -R
 
 # Install OpenJDK-8
 # RUN sudo apt-get update && \
@@ -69,9 +69,9 @@ RUN chmod a+w ./ -R
 # RUN sudo apt-get update && apt-get install -y software-properties-common gcc && \
 #     add-apt-repository -y ppa:deadsnakes/ppa
 
-RUN sudo apt-get update && apt-get install -y python3.6 python3-pip 
+# RUN sudo apt-get update && apt-get install -y python3.6 python3-pip 
 
-USER coder
+# USER coder
 
 # Copy files: 
 # COPY deploy-container/myTool /home/coder/myTool
