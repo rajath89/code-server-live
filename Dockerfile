@@ -47,7 +47,7 @@ RUN chmod a+w ./ -R
 #     update-ca-certificates -f;
 
 RUN sudo apt-get update
-
+RUN sudo apt install --reinstall software-properties-common
 RUN sudo apt-get install software-properties-common
 
 RUN sudo apt-add-repository 'deb http://security.debian.org/debian-security stretch/updates main'
