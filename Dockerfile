@@ -2,7 +2,7 @@
 FROM codercom/code-server:4.0.2
 
 USER coder
-
+#Wrote default config file to ~/.config/code-server/config.yaml
 
 
 # Use bash shell
@@ -96,7 +96,7 @@ USER coder
 # -----------
 
 # Port
-ENV PORT=8081
+ENV PORT=6949
 
 # Use our custom entrypoint script first
 #COPY deploy-container/entrypoint.sh /usr/bin/deploy-container-entrypoint.sh
