@@ -35,12 +35,14 @@ RUN code-server --install-extension sdras.night-owl-2.0.1.vsix
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
 
+
+
+
+USER root
 # Apply VS Code settings
 COPY workspaceFolder/settings.json .local/share/code-server/User/settings.json
 COPY workspaceFolder/file.txt .local/share/code-server/User/file.txt
 
-
-USER root
 RUN chmod a+w ./ -R
 
 RUN sudo dpkg --purge --force-depends ca-certificates-java 
