@@ -40,8 +40,8 @@ RUN code-server --install-extension sdras.night-owl-2.0.1.vsix
 
 USER root
 # Apply VS Code settings
-COPY workspaceFolder/settings.json .local/share/code-server/User/settings.json
-COPY workspaceFolder/file.txt .local/share/code-server/User/file.txt
+COPY workspaceFolder/settings.json /User/settings.json
+COPY workspaceFolder/file.txt /User/file.txt
 
 RUN chmod a+w ./ -R
 
