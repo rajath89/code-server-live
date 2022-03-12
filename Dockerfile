@@ -1,11 +1,9 @@
 # Start from the code-server Debian base image
-FROM codercom/code-server:3.10.2
+FROM codercom/code-server:4.0.2
 
 USER coder
 
-# Apply VS Code settings
-COPY workspaceFolder/settings.json .local/share/code-server/User/settings.json
-COPY workspaceFolder/file.txt .local/share/code-server/User/file.txt
+
 
 # Use bash shell
 ENV SHELL=/bin/bash
@@ -28,11 +26,18 @@ RUN sudo chown -R coder:coder /home/coder/.local
 #RUN code-server --install-extension dendron.dendron
 
 RUN sudo apt-get install wget
-RUN wget https://open-vsx.org/api/dendron/dendron/0.83.0/file/dendron.dendron-0.83.0.vsix 
-RUN code-server --install-extension dendron.dendron-0.83.0.vsix 
+RUN wget https://open-vsx.org/api/foam/foam-vscode/0.17.6/file/foam.foam-vscode-0.17.6.vsix 
+RUN code-server --install-extension foam.foam-vscode-0.17.6.vsix  
+RUN wget https://open-vsx.org/api/sdras/night-owl/2.0.1/file/sdras.night-owl-2.0.1.vsix
+RUN code-server --install-extension sdras.night-owl-2.0.1.vsix
+
 
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
+
+# Apply VS Code settings
+COPY workspaceFolder/settings.json .local/share/code-server/User/settings.json
+COPY workspaceFolder/file.txt .local/share/code-server/User/file.txt
 
 
 USER root
@@ -94,3 +99,22 @@ ENV PORT=8081
 # Use our custom entrypoint script first
 #COPY deploy-container/entrypoint.sh /usr/bin/deploy-container-entrypoint.sh
 #ENTRYPOINT ["/usr/bin/deploy-container-entrypoint.sh"]
+
+
+
+# FROM python:3.7.7-slim
+
+# WORKDIR /home
+
+# RUN /bin/bash -c "apt-get update -y;apt-get install wget -y"
+
+# RUN wget https://github.com/cdr/code-server/releases/download/3.2.0/code-server-3.2.0-linux-x86_64.tar.gz
+# RUN tar -xzvf code-server-3.2.0-linux-x86_64.tar.gz
+
+# COPY requirements.txt .
+
+# RUN pip install --no-cache-dir -r requirements.txt
+
+# ENV PASSWORD=demo
+
+# CMD /bin/bash -c "./code-server-3.2.0-linux-x86_64/code-server --install-extension ms-python.python --force --install-extension ms-azuretools.vscode-docker --force && ./code-server-3.2.0-linux-x86_64/code-server --host 0.0.0.0 --port 8989"
