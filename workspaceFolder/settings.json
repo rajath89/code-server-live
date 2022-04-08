@@ -1,6 +1,6 @@
 
 {
-    "workbench.colorTheme": "Default Dark+",
+    "workbench.colorTheme": "Night owl",
     "git.postCommitCommand": "sync",
     "git.enableSmartCommit": true,
     "git.confirmSync": false,
